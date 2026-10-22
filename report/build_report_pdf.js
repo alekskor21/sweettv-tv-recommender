@@ -13,7 +13,7 @@ const PORT = 9335;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 (async () => {
   const now = new Date();
-  const hhmm = now.toISOString().slice(11, 16);
+  const hhmm = now.toISOString().slice(0, 16).replace("T", " ");
   const src = fs.readFileSync(HTML, "utf8");
   if (src.includes("[END]")) fs.writeFileSync(HTML, src.replace("[END]", hhmm));
   console.log(`build time (UTC): ${now.toISOString()}; [END] -> ${src.includes("[END]") ? hhmm : "(already replaced)"}`);
