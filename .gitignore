@@ -2,3 +2,5 @@
 data/
 __pycache__/
 .DS_Store
+report/*.pdf
+report/korostelev_aleksandr_exam_report.html

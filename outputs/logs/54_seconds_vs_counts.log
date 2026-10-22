@@ -1,0 +1,4 @@
+personal top-5 by seconds (s02 logic)      median programme length    60 min | categories {'Инфо': 0.278, 'Развлечения': 0.272, 'Сериалы': 0.146, 'Познавательное': 0.128}
+personal top-5 by airing count             median programme length    50 min | categories {'Инфо': 0.413, 'Развлечения': 0.231, 'Детям': 0.124, 'Сериалы': 0.108}
+target T5sec (top-5 by seconds)            median programme length    88 min | categories {'Развлечения': 0.225, 'Фильмы': 0.21, 'Инфо': 0.194, 'Сериалы': 0.156}
+target A5_half (top-5 by airings >=50%)    median programme length    45 min | categories {'Инфо': 0.359, 'Развлечения': 0.187, 'Детям': 0.176, 'Сериалы': 0.142}

@@ -1,0 +1,5 @@
+     ref  fileName                  date                        description                                                                           status                     publicScore  privateScore  
+--------  ------------------------  --------------------------  ------------------------------------------------------------------------------------  -------------------------  -----------  ------------  
+57531540  s03_hybrid.csv            2026-10-22 16:27:05.383000  Коростелев Александр Олегович, alekskorstl — s03 hybrid (candidates + GBM re-ranker)  SubmissionStatus.COMPLETE  0.42177      0.41517       
+57531412  s02_personal_history.csv  2026-10-22 16:21:21.103000  Коростелев Александр Олегович, alekskorstl — s02 personal history                     SubmissionStatus.COMPLETE  0.27882      0.24850       
+57531247  s01_popularity.csv        2026-10-22 16:15:29.990000  Коростелев Александр Олегович, alekskorstl — s01 popularity baseline                  SubmissionStatus.COMPLETE  0.28234      0.27809       

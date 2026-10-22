@@ -1,10 +1,12 @@
 """Stage 70: two example users, every method's Top-5 side by side (validation split: history 11-20,
 actual viewing 21-30). Users are picked by rule, not by hand: the test users closest to the 90th
 (heavy) and 10th (light) percentile of watched airings in weeks 11-20, among users with a GT list."""
+import json
+
 import numpy as np
 import pandas as pd
 
-from common import P, SPLITS, candidate_pool, gt_variants, interactions, load_airings, load_schedule, load_users, test_uids
+from common import P, SPLITS, apk, candidate_pool, gt_variants, interactions, load_airings, load_schedule, load_users, test_uids
 from hybrid import FEATURES, add_labels, build_candidates, ranker, recs_from_scores
 from methods import ALS, ContentBased, PersonalHistory, Popularity, PureSVD, top_k
 
@@ -72,6 +74,23 @@ for label, u in picked.items():
         out.append(f"| {r + 1} | " + " | ".join(cells) + " |")
     hits = {name: sum(i in gt[u] for i in lists[name][u]) for name in lists}
     out.append("\nhits out of 5: " + ", ".join(f"{k} {v}" for k, v in hits.items()))
+    out.append("AP@5: " + ", ".join(f"{k} {apk(set(gt[u]), lists[k][u]):.4f}" for k in lists))
 text = "\n".join(out)
 (P.parent.parent / "outputs" / "70_examples.md").write_text(text)
 print(text)
+
+# machine-readable copy for the report tables
+export = []
+for label, u in picked.items():
+    seen = set(inter.loc[inter["uid"] == u, "tv_show_id"])
+    item = lambda i: {"id": int(i), "title": title.get(i, "?"), "category": category.get(i, "?")}
+    export.append({
+        "label": label, "user_id": user_hash[u], "airings_11_20": int(act[u]), "distinct_11_20": len(seen),
+        "history_top5": [{**item(i), "n_airings": int(n)} for i, n in zip(*inter[inter["uid"] == u]
+                         .sort_values("n_airings", ascending=False).head(5)[["tv_show_id", "n_airings"]].values.T)],
+        "actual_21_30": [item(i) for i in gt[u]],
+        "methods": {name: [{**item(i), "hit": bool(i in gt[u]), "seen": bool(i in seen)} for i in lists[name][u]]
+                    for name in lists},
+        "ap_at_5": {name: round(apk(set(gt[u]), lists[name][u]), 4) for name in lists},
+    })
+(P.parent.parent / "outputs" / "70_examples.json").write_text(json.dumps(export, ensure_ascii=False, indent=1))

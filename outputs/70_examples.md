@@ -14,6 +14,7 @@ Actually watched, weeks 21-30 (GT, A5_half): 1100411 'Вещдок'. (Позна
 | 5 | 2400467 'Викна-Новости'. (Инфо; seen) | 5200303 'Следствие вели...' с Леонидом Каневск (Познавательное; seen) | 5200303 'Следствие вели...' с Леонидом Каневск (Познавательное; seen) | 200352 'Вечерний квартал'. (Развлечения; seen) | 5900319 Абзац! (Инфо; seen) | 200337 Утро с Интером. (Развлечения; seen) |
 
 hits out of 5: popularity 3, personal history 2, MF: PureSVD 2, MF: ALS 1, content-based 0, hybrid (final) 3
+AP@5: popularity 0.6000, personal history 0.3333, MF: PureSVD 0.3333, MF: ALS 0.0500, content-based 0.0000, hybrid (final) 0.5500
 
 ### light viewer (p10): user_id 8449544243572273063
 weeks 11-20: 156 airings watched, 79 distinct programmes
@@ -30,3 +31,4 @@ Actually watched, weeks 21-30 (GT, A5_half): 1000376 Т/с 'Друзья', 1 с�
 | 5 | 2400467 'Викна-Новости'. (Инфо; seen) | 12001682 М/с 'Губка Боб Квадратные Штаны'. (Детям; seen) | 12001732 М/с 'Пингвины из 'Мадагаскара'. (Детям; seen) | 12001682 М/с 'Губка Боб Квадратные Штаны'. (Детям; seen) | 12002856 М/с 'Элвиннн!!! и бурундуки'. (Детям; seen) | 12002809 М/с 'Ниндзяго: Мастера Кружитцу'. (Детям; seen) |
 
 hits out of 5: popularity 1, personal history 1, MF: PureSVD 1, MF: ALS 1, content-based 1, hybrid (final) 1
+AP@5: popularity 0.2000, personal history 0.2000, MF: PureSVD 0.1000, MF: ALS 0.1000, content-based 0.2000, hybrid (final) 0.2000

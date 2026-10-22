@@ -7,7 +7,8 @@ mkdir -p outputs/logs
 for s in 00_prepare 01_eda 02_time_alignment 02b_dst_check 03_join 03b_verify_join 04_threshold_eda \
          05_repeat_stats check_metric 10_baselines 11_gt_sensitivity 12_baseline_submissions 13_gt_grid \
          14_count_hypothesis 15_viewcount_variant 20_als 21_mf_variants 30_content 31_content_ablation \
-         40_methods_eval 50_hybrid_eval 51_hybrid_experiments 52_robustness 60_final_submission 70_examples; do
+         40_methods_eval 50_hybrid_eval 51_hybrid_experiments 52_robustness 53_lb_calibration 54_seconds_vs_counts \
+         60_final_submission 70_examples; do
   echo "== $s"
   if [ "$s" = "60_final_submission" ]; then
     $PY src/$s.py s03_hybrid 2>&1 | grep -v Warning | tee outputs/logs/$s.log
