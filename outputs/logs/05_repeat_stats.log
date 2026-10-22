@@ -1,0 +1,8 @@
+test users with target activity: 1246 | GT size median: 5.0
+GT items the user watched (any overlap) in weeks 11-20: 0.694
+GT items inside the user's own top-5 of weeks 11-20: 0.360
+GT items inside the user's own top-10 of weeks 11-20: 0.466
+GT items inside the user's own top-20 of weeks 11-20: 0.542
+GT items whose id does not air at all in weeks 11-20 schedule: 0.082
+per-user |top5(11-20) ∩ top5(21-30)| distribution: {0: 238, 1: 277, 2: 360, 3: 253, 4: 107, 5: 11}
+distinct programmes in all GT lists: 808 | share of GT slots taken by top-20 programmes: 0.507

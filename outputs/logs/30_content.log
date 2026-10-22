@@ -1,0 +1,7 @@
+{'channel token': False, 'profile min minutes': 0, 'vocab': 5381, 'T5sec': 0.0047, 'T10sec': 0.009, 'A5_300': 0.007, 'sec': 0.7}
+{'channel token': False, 'profile min minutes': 30, 'vocab': 5381, 'T5sec': 0.0147, 'T10sec': 0.0252, 'A5_300': 0.0197, 'sec': 0.7}
+{'channel token': False, 'profile min minutes': 180, 'vocab': 5381, 'T5sec': 0.0747, 'T10sec': 0.1027, 'A5_300': 0.094, 'sec': 0.6}
+{'channel token': True, 'profile min minutes': 0, 'vocab': 5560, 'T5sec': 0.0179, 'T10sec': 0.0314, 'A5_300': 0.0196, 'sec': 0.8}
+{'channel token': True, 'profile min minutes': 30, 'vocab': 5560, 'T5sec': 0.0418, 'T10sec': 0.0687, 'A5_300': 0.0472, 'sec': 0.7}
+{'channel token': True, 'profile min minutes': 180, 'vocab': 5560, 'T5sec': 0.1245, 'T10sec': 0.1789, 'A5_300': 0.1498, 'sec': 0.6}
+runtime 4.7s

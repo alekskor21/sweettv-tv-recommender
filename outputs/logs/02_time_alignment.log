@@ -1,0 +1,32 @@
+view_sec mismatches: 117 | diff values: {3600.0: 117}
+their start dates: {datetime.date(2020, 3, 29): 115, datetime.date(2020, 3, 28): 2}
+min view_sec: 61
+
+share of view starts within 60 s of a programme start, by shift applied to view times:
+  shift -3 h: 0.0361
+  shift -2 h: 0.0359
+  shift -1 h: 0.0347
+  shift +0 h: 0.0367
+  shift +1 h: 0.0337
+  shift +2 h: 0.0333
+  shift +3 h: 0.0328
+fine shifts around 0 (minutes):
+  shift -10 min: 0.0359
+  shift -5 min: 0.0378
+  shift -2 min: 0.0398
+  shift -1 min: 0.0403
+  shift +0 min: 0.0367
+  shift +1 min: 0.0338
+  shift +2 min: 0.0336
+  shift +5 min: 0.0340
+  shift +10 min: 0.0346
+
+share of programme starts on odd minutes: 0.159
+share within 60 s of an odd-minute programme boundary (start / stop of view):
+  shift -3 h: 0.0061 / 0.0061
+  shift -2 h: 0.0060 / 0.0060
+  shift -1 h: 0.0061 / 0.0061
+  shift +0 h: 0.0060 / 0.0067
+  shift +1 h: 0.0061 / 0.0056
+  shift +2 h: 0.0060 / 0.0059
+  shift +3 h: 0.0060 / 0.0057

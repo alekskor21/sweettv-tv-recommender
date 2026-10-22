@@ -1,0 +1,11 @@
+test pool size: 6642 | popularity top-5: [2400480, 240081, 6500479, 2400508, 2400467]
+OK s01_popularity.csv: 1260 rows x 5 ids, 5 distinct ids, all in pool
+test users needing popularity fill: 3
+OK s02_personal_history.csv: 1260 rows x 5 ids, 473 distinct ids, all in pool
+                                tv_show_title tv_show_category channel_title
+tv_show_id                                                                  
+2400480                        'ТСН. Неделя'.             Инфо           1+1
+240081                           Факты. День.             Инфо          ICTV
+6500479     'Мир наизнанку. Бразилия', 36 эп.   Познавательное           1+1
+2400508      Сегодня. Итоги с Олегом Панютой.             Инфо       Украина
+2400467                      'Викна-Новости'.             Инфо           СТБ

@@ -1,0 +1,30 @@
+{'model': 'ALS', 'min_minutes': 30, 'factors': 16, 'alpha': 1.0, 'T5sec': 0.1547, 'T10sec': 0.2436, 'A5_300': 0.2281, 'sec': 0.6}
+{'model': 'ALS', 'min_minutes': 30, 'factors': 16, 'alpha': 10.0, 'T5sec': 0.0599, 'T10sec': 0.091, 'A5_300': 0.0949, 'sec': 0.6}
+{'model': 'ALS', 'min_minutes': 30, 'factors': 32, 'alpha': 1.0, 'T5sec': 0.1376, 'T10sec': 0.2192, 'A5_300': 0.1954, 'sec': 0.7}
+{'model': 'ALS', 'min_minutes': 30, 'factors': 32, 'alpha': 10.0, 'T5sec': 0.037, 'T10sec': 0.0572, 'A5_300': 0.0567, 'sec': 0.7}
+{'model': 'ALS', 'min_minutes': 30, 'factors': 64, 'alpha': 1.0, 'T5sec': 0.1133, 'T10sec': 0.1786, 'A5_300': 0.1516, 'sec': 1.1}
+{'model': 'ALS', 'min_minutes': 30, 'factors': 64, 'alpha': 10.0, 'T5sec': 0.033, 'T10sec': 0.0525, 'A5_300': 0.0539, 'sec': 1.1}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 16, 'alpha': 1.0, 'T5sec': 0.1651, 'T10sec': 0.2587, 'A5_300': 0.2335, 'sec': 0.4}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 16, 'alpha': 10.0, 'T5sec': 0.0737, 'T10sec': 0.1131, 'A5_300': 0.1143, 'sec': 0.4}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 32, 'alpha': 1.0, 'T5sec': 0.1604, 'T10sec': 0.2485, 'A5_300': 0.2117, 'sec': 0.5}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 32, 'alpha': 10.0, 'T5sec': 0.0588, 'T10sec': 0.0904, 'A5_300': 0.0883, 'sec': 0.5}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 64, 'alpha': 1.0, 'T5sec': 0.15, 'T10sec': 0.2366, 'A5_300': 0.1974, 'sec': 0.8}
+{'model': 'ALS', 'min_minutes': 60, 'factors': 64, 'alpha': 10.0, 'T5sec': 0.0637, 'T10sec': 0.1002, 'A5_300': 0.0926, 'sec': 0.8}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 16, 'alpha': 1.0, 'T5sec': 0.2192, 'T10sec': 0.326, 'A5_300': 0.2731, 'sec': 0.1}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 16, 'alpha': 10.0, 'T5sec': 0.1345, 'T10sec': 0.2054, 'A5_300': 0.1717, 'sec': 0.1}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 32, 'alpha': 1.0, 'T5sec': 0.2187, 'T10sec': 0.3244, 'A5_300': 0.2693, 'sec': 0.1}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 32, 'alpha': 10.0, 'T5sec': 0.1881, 'T10sec': 0.2762, 'A5_300': 0.2325, 'sec': 0.1}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 64, 'alpha': 1.0, 'T5sec': 0.2103, 'T10sec': 0.3135, 'A5_300': 0.255, 'sec': 0.3}
+{'model': 'ALS', 'min_minutes': 180, 'factors': 64, 'alpha': 10.0, 'T5sec': 0.2171, 'T10sec': 0.3194, 'A5_300': 0.2562, 'sec': 0.3}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 8, 'alpha': None, 'T5sec': 0.214, 'T10sec': 0.3299, 'A5_300': 0.3218, 'sec': 0.2}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 16, 'alpha': None, 'T5sec': 0.242, 'T10sec': 0.3635, 'A5_300': 0.3387, 'sec': 0.2}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 32, 'alpha': None, 'T5sec': 0.2588, 'T10sec': 0.3776, 'A5_300': 0.3338, 'sec': 0.3}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 64, 'alpha': None, 'T5sec': 0.2629, 'T10sec': 0.3745, 'A5_300': 0.3239, 'sec': 0.4}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 128, 'alpha': None, 'T5sec': 0.2663, 'T10sec': 0.378, 'A5_300': 0.3204, 'sec': 0.7}
+  model  min_minutes  factors  alpha  T5sec  T10sec  A5_300  sec
+PureSVD            0      128    NaN 0.2663  0.3780  0.3204  0.7
+PureSVD            0       32    NaN 0.2588  0.3776  0.3338  0.3
+PureSVD            0       64    NaN 0.2629  0.3745  0.3239  0.4
+PureSVD            0       16    NaN 0.2420  0.3635  0.3387  0.2
+PureSVD            0        8    NaN 0.2140  0.3299  0.3218  0.2
+    ALS          180       16    1.0 0.2192  0.3260  0.2731  0.1

@@ -1,0 +1,17 @@
+labelled view-programme rows: 3,847,696
+overlap_sec quantiles: {0.1: 79.0, 0.25: 155.0, 0.5: 523.0, 0.75: 1500.0, 0.9: 3291.0}
+prog_sec quantiles (labelled airings watched): {0.1: 1500.0, 0.5: 6000.0, 0.9: 9600.0}
+frac histogram (share of rows per decile of programme covered):
+   {'0.0-0.1': np.float64(0.472), '0.1-0.2': np.float64(0.131), '0.2-0.3': np.float64(0.076), '0.3-0.4': np.float64(0.052), '0.4-0.5': np.float64(0.04), '0.5-0.6': np.float64(0.032), '0.6-0.7': np.float64(0.026), '0.7-0.8': np.float64(0.023), '0.8-0.9': np.float64(0.02), '0.9-1.0': np.float64(0.128)}
+
+per (user, airing): rows 3,014,129
+  frac histogram: {'0.0-0.1': np.float64(0.382), '0.1-0.2': np.float64(0.122), '0.2-0.3': np.float64(0.077), '0.3-0.4': np.float64(0.058), '0.4-0.5': np.float64(0.048), '0.5-0.6': np.float64(0.041), '0.6-0.7': np.float64(0.035), '0.7-0.8': np.float64(0.032), '0.8-0.9': np.float64(0.03), '0.9-1.0': np.float64(0.175)}
+  share of total overlap time in airings with frac>=0.5: 0.655
+
+rule -> airings kept, distinct (user, show) pairs, users with >=1 pair, short-programme (<600 s) share of kept
+  any overlap            1.000  1,371,685  4,895  0.016
+  >=300 s                0.690   949,556  4,890  0.013
+  >=600 s                0.553   786,791  4,888  0.000
+  frac>=0.25             0.454   554,417  4,882  0.032
+  frac>=0.5              0.312   368,703  4,871  0.044
+  >=300 s or frac>=0.5   0.694   950,301  4,890  0.020

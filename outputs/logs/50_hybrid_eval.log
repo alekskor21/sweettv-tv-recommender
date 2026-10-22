@@ -1,0 +1,14 @@
+candidates: 838,016 rows, 151 per user (median); built in 3.6s
+candidate recall of A5_half GT items (test users): 0.841
+ranker fitted on 581,022 rows (3654 non-test users) in 3.8s, iterations used: 208
+                            A5_half  A5_any   T5sec
+hybrid (GBM re-ranker)       0.4493  0.4646  0.2612
+single feature: h_cnt        0.3890  0.4488  0.2846
+single feature: h_expected   0.3886  0.4470  0.2813
+single feature: svd          0.3836  0.4451  0.2825
+  with ['svd'] blanked at prediction: {'A5_half': 0.4504, 'A5_any': 0.4664, 'T5sec': 0.2619}
+  with ['cb'] blanked at prediction: {'A5_half': 0.4509, 'A5_any': 0.4616, 'T5sec': 0.2594}
+  with ['svd', 'cb'] blanked at prediction: {'A5_half': 0.4516, 'A5_any': 0.4643, 'T5sec': 0.2607}
+  with ['ch_aff'] blanked at prediction: {'A5_half': 0.4332, 'A5_any': 0.4406, 'T5sec': 0.249}
+  with ['h_expected', 'h_rate'] blanked at prediction: {'A5_half': 0.4444, 'A5_any': 0.4544, 'T5sec': 0.2519}
+runtime 10.1s

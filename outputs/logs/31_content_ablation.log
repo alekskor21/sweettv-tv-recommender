@@ -1,0 +1,10 @@
+{'features': 'cat+genre', 'profile min minutes': 180, 'T5sec': 0.0559, 'T10sec': 0.0808, 'A5_300': 0.0736}
+{'features': 'cat+genre', 'profile min minutes': 600, 'T5sec': 0.0634, 'T10sec': 0.0866, 'A5_300': 0.0828}
+{'features': 'cat+genre+decade', 'profile min minutes': 180, 'T5sec': 0.0599, 'T10sec': 0.0828, 'A5_300': 0.0753}
+{'features': 'cat+genre+decade', 'profile min minutes': 600, 'T5sec': 0.0943, 'T10sec': 0.1201, 'A5_300': 0.1155}
+{'features': 'cat+genre+channel', 'profile min minutes': 180, 'T5sec': 0.1235, 'T10sec': 0.1765, 'A5_300': 0.1464}
+{'features': 'cat+genre+channel', 'profile min minutes': 600, 'T5sec': 0.1439, 'T10sec': 0.1859, 'A5_300': 0.1658}
+{'features': 'cat+genre+decade+channel', 'profile min minutes': 180, 'T5sec': 0.1178, 'T10sec': 0.1691, 'A5_300': 0.1385}
+{'features': 'cat+genre+decade+channel', 'profile min minutes': 600, 'T5sec': 0.1434, 'T10sec': 0.1854, 'A5_300': 0.1651}
+{'features': 'all (incl. director, actors)', 'profile min minutes': 180, 'T5sec': 0.1245, 'T10sec': 0.1789, 'A5_300': 0.1498}
+{'features': 'all (incl. director, actors)', 'profile min minutes': 600, 'T5sec': 0.1445, 'T10sec': 0.1868, 'A5_300': 0.1663}

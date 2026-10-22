@@ -1,0 +1,25 @@
+method,params,A5_half,A5_any,T5sec,fit_s,total_s
+popularity,distinct viewers,0.2922,0.3202,0.1771,0.02,0.11
+personal history,airing count,0.3891,0.4496,0.2857,0.01,0.11
+ALS,factors=16 alpha=1.0 min_airings=1,0.1838,0.2035,0.1227,1.5,1.71
+ALS,factors=16 alpha=1.0 min_airings=3,0.2075,0.2394,0.1468,0.21,0.34
+ALS,factors=16 alpha=10.0 min_airings=1,0.1216,0.1329,0.0756,1.48,1.67
+ALS,factors=16 alpha=10.0 min_airings=3,0.1372,0.1507,0.0905,0.21,0.33
+ALS,factors=32 alpha=1.0 min_airings=1,0.1496,0.1643,0.1047,1.79,1.98
+ALS,factors=32 alpha=1.0 min_airings=3,0.1567,0.1841,0.1222,0.27,0.39
+ALS,factors=32 alpha=10.0 min_airings=1,0.0826,0.0906,0.0501,1.79,1.99
+ALS,factors=32 alpha=10.0 min_airings=3,0.1149,0.1306,0.0798,0.27,0.4
+ALS,factors=64 alpha=1.0 min_airings=1,0.1085,0.1189,0.0775,2.7,2.9
+ALS,factors=64 alpha=1.0 min_airings=3,0.1357,0.1525,0.1031,0.48,0.61
+ALS,factors=64 alpha=10.0 min_airings=1,0.0526,0.056,0.0299,2.72,2.92
+ALS,factors=64 alpha=10.0 min_airings=3,0.1311,0.1466,0.0928,0.48,0.61
+PureSVD,factors=16,0.3777,0.4203,0.247,0.1,0.3
+PureSVD,factors=32,0.3794,0.4297,0.2687,0.15,0.35
+PureSVD,factors=64,0.3754,0.4327,0.2771,0.27,0.46
+PureSVD,factors=128,0.3847,0.4465,0.2827,0.55,0.74
+content-based,min_airings=1 fields=cat+genre+decade+dir+act,0.0103,0.0124,0.0082,0.3,0.87
+content-based,min_airings=1 fields=cat+genre+decade+ch+dir+act,0.0346,0.0342,0.0283,0.31,0.89
+content-based,min_airings=3 fields=cat+genre+decade+dir+act,0.0438,0.0513,0.0347,0.23,0.68
+content-based,min_airings=3 fields=cat+genre+decade+ch+dir+act,0.1016,0.1074,0.074,0.22,0.69
+content-based,min_airings=10 fields=cat+genre+decade+dir+act,0.135,0.1444,0.0852,0.22,0.56
+content-based,min_airings=10 fields=cat+genre+decade+ch+dir+act,0.2054,0.2171,0.1392,0.21,0.58

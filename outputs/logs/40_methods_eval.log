@@ -1,0 +1,32 @@
+{'method': 'popularity', 'params': 'distinct viewers', 'A5_half': 0.2922, 'A5_any': 0.3202, 'T5sec': 0.1771, 'fit_s': 0.02, 'total_s': 0.11}
+{'method': 'personal history', 'params': 'airing count', 'A5_half': 0.3891, 'A5_any': 0.4496, 'T5sec': 0.2857, 'fit_s': 0.01, 'total_s': 0.11}
+{'method': 'ALS', 'params': 'factors=16 alpha=1.0 min_airings=1', 'A5_half': 0.1838, 'A5_any': 0.2035, 'T5sec': 0.1227, 'fit_s': 1.5, 'total_s': 1.71}
+{'method': 'ALS', 'params': 'factors=16 alpha=1.0 min_airings=3', 'A5_half': 0.2075, 'A5_any': 0.2394, 'T5sec': 0.1468, 'fit_s': 0.21, 'total_s': 0.34}
+{'method': 'ALS', 'params': 'factors=16 alpha=10.0 min_airings=1', 'A5_half': 0.1216, 'A5_any': 0.1329, 'T5sec': 0.0756, 'fit_s': 1.48, 'total_s': 1.67}
+{'method': 'ALS', 'params': 'factors=16 alpha=10.0 min_airings=3', 'A5_half': 0.1372, 'A5_any': 0.1507, 'T5sec': 0.0905, 'fit_s': 0.21, 'total_s': 0.33}
+{'method': 'ALS', 'params': 'factors=32 alpha=1.0 min_airings=1', 'A5_half': 0.1496, 'A5_any': 0.1643, 'T5sec': 0.1047, 'fit_s': 1.79, 'total_s': 1.98}
+{'method': 'ALS', 'params': 'factors=32 alpha=1.0 min_airings=3', 'A5_half': 0.1567, 'A5_any': 0.1841, 'T5sec': 0.1222, 'fit_s': 0.27, 'total_s': 0.39}
+{'method': 'ALS', 'params': 'factors=32 alpha=10.0 min_airings=1', 'A5_half': 0.0826, 'A5_any': 0.0906, 'T5sec': 0.0501, 'fit_s': 1.79, 'total_s': 1.99}
+{'method': 'ALS', 'params': 'factors=32 alpha=10.0 min_airings=3', 'A5_half': 0.1149, 'A5_any': 0.1306, 'T5sec': 0.0798, 'fit_s': 0.27, 'total_s': 0.4}
+{'method': 'ALS', 'params': 'factors=64 alpha=1.0 min_airings=1', 'A5_half': 0.1085, 'A5_any': 0.1189, 'T5sec': 0.0775, 'fit_s': 2.7, 'total_s': 2.9}
+{'method': 'ALS', 'params': 'factors=64 alpha=1.0 min_airings=3', 'A5_half': 0.1357, 'A5_any': 0.1525, 'T5sec': 0.1031, 'fit_s': 0.48, 'total_s': 0.61}
+{'method': 'ALS', 'params': 'factors=64 alpha=10.0 min_airings=1', 'A5_half': 0.0526, 'A5_any': 0.056, 'T5sec': 0.0299, 'fit_s': 2.72, 'total_s': 2.92}
+{'method': 'ALS', 'params': 'factors=64 alpha=10.0 min_airings=3', 'A5_half': 0.1311, 'A5_any': 0.1466, 'T5sec': 0.0928, 'fit_s': 0.48, 'total_s': 0.61}
+{'method': 'PureSVD', 'params': 'factors=16', 'A5_half': 0.3777, 'A5_any': 0.4203, 'T5sec': 0.247, 'fit_s': 0.1, 'total_s': 0.3}
+{'method': 'PureSVD', 'params': 'factors=32', 'A5_half': 0.3794, 'A5_any': 0.4297, 'T5sec': 0.2687, 'fit_s': 0.15, 'total_s': 0.35}
+{'method': 'PureSVD', 'params': 'factors=64', 'A5_half': 0.3754, 'A5_any': 0.4327, 'T5sec': 0.2771, 'fit_s': 0.27, 'total_s': 0.46}
+{'method': 'PureSVD', 'params': 'factors=128', 'A5_half': 0.3847, 'A5_any': 0.4465, 'T5sec': 0.2827, 'fit_s': 0.55, 'total_s': 0.74}
+{'method': 'content-based', 'params': 'min_airings=1 fields=cat+genre+decade+dir+act', 'A5_half': 0.0103, 'A5_any': 0.0124, 'T5sec': 0.0082, 'fit_s': 0.3, 'total_s': 0.87}
+{'method': 'content-based', 'params': 'min_airings=1 fields=cat+genre+decade+ch+dir+act', 'A5_half': 0.0346, 'A5_any': 0.0342, 'T5sec': 0.0283, 'fit_s': 0.31, 'total_s': 0.89}
+{'method': 'content-based', 'params': 'min_airings=3 fields=cat+genre+decade+dir+act', 'A5_half': 0.0438, 'A5_any': 0.0513, 'T5sec': 0.0347, 'fit_s': 0.23, 'total_s': 0.68}
+{'method': 'content-based', 'params': 'min_airings=3 fields=cat+genre+decade+ch+dir+act', 'A5_half': 0.1016, 'A5_any': 0.1074, 'T5sec': 0.074, 'fit_s': 0.22, 'total_s': 0.69}
+{'method': 'content-based', 'params': 'min_airings=10 fields=cat+genre+decade+dir+act', 'A5_half': 0.135, 'A5_any': 0.1444, 'T5sec': 0.0852, 'fit_s': 0.22, 'total_s': 0.56}
+{'method': 'content-based', 'params': 'min_airings=10 fields=cat+genre+decade+ch+dir+act', 'A5_half': 0.2054, 'A5_any': 0.2171, 'T5sec': 0.1392, 'fit_s': 0.21, 'total_s': 0.58}
+
+best configuration per method (selected on A5_half):
+          method                                            params  A5_half  A5_any  T5sec  fit_s  total_s
+personal history                                      airing count   0.3891  0.4496 0.2857   0.01     0.11
+         PureSVD                                       factors=128   0.3847  0.4465 0.2827   0.55     0.74
+      popularity                                  distinct viewers   0.2922  0.3202 0.1771   0.02     0.11
+             ALS                factors=16 alpha=1.0 min_airings=3   0.2075  0.2394 0.1468   0.21     0.34
+   content-based min_airings=10 fields=cat+genre+decade+ch+dir+act   0.2054  0.2171 0.1392   0.21     0.58

@@ -1,0 +1,39 @@
+
+=== time ranges
+views: 2020-03-09 00:00:02 -> 2020-07-26 23:59:58 | ISO weeks 11 - 30
+schedule 11-20: 2020-03-08 23:00:00 -> 2020-05-18 12:00:00 | ISO weeks 10 - 21
+schedule 21-30: 2020-05-18 00:00:00 -> 2020-07-27 12:00:00 | ISO weeks 21 - 31
+schedule 31-42: 2020-07-27 00:00:00 -> 2020-10-19 12:00:00 | ISO weeks 31 - 43
+
+=== view_sec sanity
+rows where view_sec != stop-start: 117
+view_sec quantiles: {0.1: 80.0, 0.25: 133.0, 0.5: 396.0, 0.75: 1452.0, 0.9: 3911.0, 0.99: 14079.139999999665} max 342145
+share of views < 60 s: 0.0 | < 300 s: 0.44
+
+=== channels
+channels in views: 202 | in schedule: 405 | views-channels missing from schedule: 5
+share of view rows on channels absent from schedule: 0.0195
+channels with any labelled programme: 196 | share of view rows on such channels: 0.8104
+
+=== test users
+test users: 1260 | in view log: 1260 | log users not in test: 3654
+test users: views per user quantiles {0.1: 494.6, 0.5: 1377.0, 0.9: 3293.4000000000005}
+test users: hours watched quantiles {0.1: 195.6, 0.5: 536.5, 0.9: 1186.8}
+test users active in weeks 21-30: 1246 | active in weeks 11-20: 1256 | last week = 30: 1216
+
+=== schedule quality
+consecutive pairs on a channel: overlap (gap<0) 13 | gap>0 404 | exact 3443185
+exact duplicate (channel,start) rows: 1
+programme duration quantiles (s): {0.1: 300.0, 0.5: 1500.0, 0.9: 5400.0, 0.99: 13200.0}
+
+=== programme ids
+distinct ids per block: {'11-20': 5847, '21-30': 6363, '31-42': 6636}
+test ids also in train schedule: 5199 | new in test: 1437
+ids in 21-30 also in 11-20: 3976
+ids with >1 category: 0 | ids airing on >1 channel: 4644 | ids with >1 title string: 4351
+categories: {'Детям': 149577, 'Сериалы': 105031, 'Фильмы': 78144, 'Развлечения': 21704, 'Инфо': 14475, 'Познавательное': 11371, 'Другое': 1572, 'Спорт': 18}
+unlabelled categories: {'Другое': 1535016, 'Познавательное': 709313, 'Спорт': 194344, 'Детям': 190369, 'Инфо': 150009, 'Сериалы': 125744, 'Музыка': 92484, 'Фильмы': 61167, 'Развлечения': 3669}
+labelled rows with tv_show_genre_1 filled: 0.957
+labelled rows with year_of_production filled: 0.991
+labelled rows with director filled: 0.865
+labelled rows with actors filled: 0.869

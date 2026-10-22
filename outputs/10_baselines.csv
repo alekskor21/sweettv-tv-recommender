@@ -1,0 +1,17 @@
+watched rule,method,MAP@5
+any,popularity: distinct viewers,0.17710272873194222
+any,popularity: total seconds,0.18019261637239165
+any,"popularity: viewers, last 4 weeks",0.18016586409844837
+any,personal history + popularity fill,0.3013590155163189
+300s,popularity: distinct viewers,0.18016586409844837
+300s,popularity: total seconds,0.18019261637239165
+300s,"popularity: viewers, last 4 weeks",0.18016586409844837
+300s,personal history + popularity fill,0.29853932584269666
+half,popularity: distinct viewers,0.15013376136971643
+half,popularity: total seconds,0.16520064205457463
+half,"popularity: viewers, last 4 weeks",0.1572043873729267
+half,personal history + popularity fill,0.2740181915462815
+300s_or_half,popularity: distinct viewers,0.18016586409844837
+300s_or_half,popularity: total seconds,0.18019261637239165
+300s_or_half,"popularity: viewers, last 4 weeks",0.18016586409844837
+300s_or_half,personal history + popularity fill,0.29855002675227393

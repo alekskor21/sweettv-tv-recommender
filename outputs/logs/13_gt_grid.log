@@ -1,0 +1,7 @@
+definitions with validation popularity within 0.28 +- 0.03:
+rank by airing filter top-N  popularity  personal
+seconds           any    10      0.2841    0.4101
+seconds        >=300s    10      0.2779    0.4070
+seconds         >=50%    15      0.3018    0.3918
+airings        >=300s     5      0.2933    0.3448
+airings         >=50%     5      0.2922    0.2953
