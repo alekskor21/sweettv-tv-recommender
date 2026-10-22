@@ -104,7 +104,11 @@ Assignment: Midterm Exam — TV Program Recommendation (sweet.tv, Kaggle) · Cod
 <div class="wide">
 <!--TABLE:methods-->
 </div>
-<p><span class="lead">Comparison vs baseline.</span> Personal history and PureSVD beat popularity by about +0.09 to +0.10; ALS and content-based filtering stay below it. The hybrid beats popularity by +0.159 and personal history by +0.062, both with confidence intervals far from zero (Table III); on the leaderboard it moves from 0.282 to 0.422. Under the seconds-based T5sec target the hybrid ranks below personal history, which shows that it was optimised for the count target.</p>
+<p><span class="lead">Comparison vs baseline.</span> Personal history and PureSVD beat popularity by about +0.09 to +0.10; ALS and content-based filtering stay below it. The hybrid beats popularity by +0.159 and personal history by +0.062, both with confidence intervals far from zero (Table III); on the leaderboard it moves from 0.282 to 0.422 (Fig. 1). Under the seconds-based T5sec target the hybrid ranks below personal history, which shows that it was optimised for the count target. For context only: on the frozen 2020 public leaderboard (36 teams, best 0.44297, median 0.40878) a public score of 0.42177 would rank 8th.</p>
+<figure style="margin: 2pt 0 6pt; break-inside: avoid;">
+<img src="kaggle_submissions.png" style="width: 100%; border: 0.5pt solid #000;" alt="Kaggle Submissions page">
+<figcaption style="font-size: 7.6pt; text-align: center; margin-top: 2pt;">Fig. 1. Kaggle Submissions page (late submissions, 22 Oct 2026). Designated final submission: <code>s03_hybrid.csv</code>, ref 57531540 — private 0.41517, public 0.42177. The page shows 0 of 2 selected and offers no selection for these late submissions.</figcaption>
+</figure>
 <!--TABLE:bootstrap-->
 <p><span class="lead">Ablation and candidates.</span> Re-fitting the extended re-ranker without its own-history features costs 0.015 (0.4527 → 0.4375); without SVD and content scores, only 0.003 (seed standard deviation 0.0013 over five seeds). Candidate recall of target items is 0.841; own history alone covers 0.802 (items found by one source only: history 0.024, popularity 0.022, PureSVD 0.010, content 0.002). Five regularity features (+0.001, CI [−0.003, 0.005]) were not adopted.</p>
 <p class="noindent"><span class="lead">Verification.</span></p>

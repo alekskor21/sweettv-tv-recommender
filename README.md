@@ -59,6 +59,10 @@ unzip data/sweettv-tv-program-recommender.zip -d data
 sh run_all.sh          # every stage in order, logs in outputs/logs/, ~5 min
 ```
 
+Optional context (not in `run_all.sh`): download the frozen 2020 public leaderboard with
+`.venv/bin/kaggle competitions leaderboard sweettv-tv-program-recommender --download -p data/leaderboard`,
+unzip it there and run `src/55_original_leaderboard.py` (prints aggregates only; 0.42177 would rank 8th of 37).
+
 `run_all.sh` regenerates every table in `outputs/` and the three submission files byte-for-byte
 (SHA-256 of `s03_hybrid.csv`: `1cb1da466c7c21bc…`). Note: `src/04_threshold_eda.py` also writes
 `data/parquet/airings.parquet`, which all later stages read.
