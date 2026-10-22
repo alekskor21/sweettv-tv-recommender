@@ -34,7 +34,7 @@ def run(name, c, features, **kw):
 
 c = build_candidates(air, sched, sched_full, sp["train"], sp["target"], n_users, all_users)[0]
 c = add_labels(c, air, sp["target"], all_users)
-run("s03 configuration (base features)", c, FEATURES)
+run("final configuration (base features)", c, FEATURES)
 run("+ regularity/recency features", c, FEATURES_EXT)
 run("+ regularity, 63 leaves", c, FEATURES_EXT, max_leaf_nodes=63)
 run("+ regularity, lr 0.1", c, FEATURES_EXT, learning_rate=0.1)

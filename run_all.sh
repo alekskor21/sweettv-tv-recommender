@@ -11,7 +11,8 @@ for s in 00_prepare 01_eda 02_time_alignment 02b_dst_check 03_join 03b_verify_jo
          60_final_submission 70_examples; do
   echo "== $s"
   if [ "$s" = "60_final_submission" ]; then
-    $PY src/$s.py s03_hybrid 2>&1 | grep -v Warning | tee outputs/logs/$s.log
+    $PY src/$s.py s03_hybrid --s03 2>&1 | grep -v Warning | tee outputs/logs/60_final_submission_s03.log
+    $PY src/$s.py s04_hybrid 2>&1 | grep -v Warning | tee outputs/logs/$s.log
   else
     $PY src/$s.py 2>&1 | grep -v Warning | tee outputs/logs/$s.log
   fi

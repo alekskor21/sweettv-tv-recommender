@@ -19,12 +19,12 @@
 {'model': 'PureSVD', 'min_minutes': 0, 'factors': 8, 'alpha': None, 'T5sec': 0.214, 'T10sec': 0.3299, 'A5_300': 0.3218, 'sec': 0.2}
 {'model': 'PureSVD', 'min_minutes': 0, 'factors': 16, 'alpha': None, 'T5sec': 0.242, 'T10sec': 0.3635, 'A5_300': 0.3387, 'sec': 0.2}
 {'model': 'PureSVD', 'min_minutes': 0, 'factors': 32, 'alpha': None, 'T5sec': 0.2588, 'T10sec': 0.3776, 'A5_300': 0.3338, 'sec': 0.3}
-{'model': 'PureSVD', 'min_minutes': 0, 'factors': 64, 'alpha': None, 'T5sec': 0.2629, 'T10sec': 0.3745, 'A5_300': 0.3239, 'sec': 0.4}
+{'model': 'PureSVD', 'min_minutes': 0, 'factors': 64, 'alpha': None, 'T5sec': 0.2629, 'T10sec': 0.3745, 'A5_300': 0.3239, 'sec': 0.5}
 {'model': 'PureSVD', 'min_minutes': 0, 'factors': 128, 'alpha': None, 'T5sec': 0.2663, 'T10sec': 0.378, 'A5_300': 0.3204, 'sec': 0.7}
   model  min_minutes  factors  alpha  T5sec  T10sec  A5_300  sec
 PureSVD            0      128    NaN 0.2663  0.3780  0.3204  0.7
 PureSVD            0       32    NaN 0.2588  0.3776  0.3338  0.3
-PureSVD            0       64    NaN 0.2629  0.3745  0.3239  0.4
+PureSVD            0       64    NaN 0.2629  0.3745  0.3239  0.5
 PureSVD            0       16    NaN 0.2420  0.3635  0.3387  0.2
 PureSVD            0        8    NaN 0.2140  0.3299  0.3218  0.2
     ALS          180       16    1.0 0.2192  0.3260  0.2731  0.1

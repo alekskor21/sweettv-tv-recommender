@@ -1,12 +1,12 @@
-{'variant': 's03 configuration (base features)', 'A5_half': 0.4493, 'A5_any': 0.4646, 'T5sec': 0.2612, 'iters': 208, 'sec': 4.0}
-{'variant': '+ regularity/recency features', 'A5_half': 0.4527, 'A5_any': 0.4688, 'T5sec': 0.2621, 'iters': 187, 'sec': 4.0}
-{'variant': '+ regularity, 63 leaves', 'A5_half': 0.4532, 'A5_any': 0.4671, 'T5sec': 0.2639, 'iters': 163, 'sec': 4.5}
-{'variant': '+ regularity, lr 0.1', 'A5_half': 0.4494, 'A5_any': 0.4643, 'T5sec': 0.2603, 'iters': 93, 'sec': 2.2}
-{'variant': 'ablation: without MF score (svd)', 'A5_half': 0.4527, 'A5_any': 0.4667, 'T5sec': 0.2625, 'iters': 216, 'sec': 4.2}
-{'variant': 'ablation: without content score (cb)', 'A5_half': 0.4505, 'A5_any': 0.4665, 'T5sec': 0.2611, 'iters': 178, 'sec': 3.7}
-{'variant': 'ablation: without svd + cb', 'A5_half': 0.4495, 'A5_any': 0.4659, 'T5sec': 0.261, 'iters': 202, 'sec': 3.9}
-{'variant': 'ablation: without channel affinity', 'A5_half': 0.451, 'A5_any': 0.4679, 'T5sec': 0.2634, 'iters': 222, 'sec': 4.3}
-{'variant': 'ablation: without own history counts', 'A5_half': 0.4375, 'A5_any': 0.4557, 'T5sec': 0.2461, 'iters': 212, 'sec': 3.5}
-{'variant': 'ablation: without target-window airing counts', 'A5_half': 0.4534, 'A5_any': 0.4654, 'T5sec': 0.2611, 'iters': 217, 'sec': 4.2}
+{'variant': 'final configuration (base features)', 'A5_half': 0.449, 'A5_any': 0.4646, 'T5sec': 0.2612, 'iters': 208, 'sec': 4.9}
+{'variant': '+ regularity/recency features', 'A5_half': 0.4524, 'A5_any': 0.4687, 'T5sec': 0.2621, 'iters': 187, 'sec': 4.5}
+{'variant': '+ regularity, 63 leaves', 'A5_half': 0.4532, 'A5_any': 0.4673, 'T5sec': 0.2639, 'iters': 163, 'sec': 5.0}
+{'variant': '+ regularity, lr 0.1', 'A5_half': 0.4494, 'A5_any': 0.4644, 'T5sec': 0.2603, 'iters': 93, 'sec': 2.4}
+{'variant': 'ablation: without MF score (svd)', 'A5_half': 0.4523, 'A5_any': 0.4667, 'T5sec': 0.2625, 'iters': 216, 'sec': 4.4}
+{'variant': 'ablation: without content score (cb)', 'A5_half': 0.4501, 'A5_any': 0.4666, 'T5sec': 0.2611, 'iters': 178, 'sec': 3.8}
+{'variant': 'ablation: without svd + cb', 'A5_half': 0.4492, 'A5_any': 0.4659, 'T5sec': 0.261, 'iters': 202, 'sec': 4.4}
+{'variant': 'ablation: without channel affinity', 'A5_half': 0.451, 'A5_any': 0.4681, 'T5sec': 0.2634, 'iters': 222, 'sec': 4.8}
+{'variant': 'ablation: without own history counts', 'A5_half': 0.4375, 'A5_any': 0.4558, 'T5sec': 0.2461, 'iters': 212, 'sec': 3.8}
+{'variant': 'ablation: without target-window airing counts', 'A5_half': 0.4534, 'A5_any': 0.4656, 'T5sec': 0.2611, 'iters': 217, 'sec': 4.7}
 wider candidates: 1,116,660 rows, recall 0.868
-{'variant': '+ regularity, wider candidates (svd100/cb50/pop50)', 'A5_half': 0.4517, 'A5_any': 0.4673, 'T5sec': 0.2628, 'iters': 327, 'sec': 8.3}
+{'variant': '+ regularity, wider candidates (svd100/cb50/pop50)', 'A5_half': 0.4516, 'A5_any': 0.4673, 'T5sec': 0.2628, 'iters': 327, 'sec': 8.5}

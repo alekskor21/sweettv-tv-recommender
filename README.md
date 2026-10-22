@@ -4,8 +4,10 @@ Top-5 TV programmes per user for weeks 31-42 of the Kaggle community competition
 [sweet.tv — TV program recommender](https://www.kaggle.com/competitions/sweettv-tv-program-recommender) (MAP@5).
 Individual work, HSE LLM4Rec course, AVITO group.
 
-**Final submission:** `outputs/submissions/s03_hybrid.csv` — candidate generation + gradient-boosting re-ranker.
-Kaggle (late submission, ref 57531540): **public 0.42177, private 0.41517**.
+**Final submission:** `outputs/submissions/s04_hybrid.csv` — candidate generation + gradient-boosting re-ranker,
+popularity top-5 for cold users. Kaggle (late submission, ref 57533595): **public 0.42152, private 0.41453**.
+The earlier `s03_hybrid.csv` (ref 57531540, public 0.42177 / private 0.41517) differs only for the 14 cold test users:
+there the re-ranker ordered their candidates from item features instead of returning the common popularity fallback.
 
 ## Results
 
@@ -22,7 +24,7 @@ that reproduces both leaderboard calibration points (see `src/13_gt_grid.py`, `s
 | MF: PureSVD, 128 factors | 0.3847 | 0.4465 | 0.2827 | — |
 | MF: ALS (implicit), 16 factors | 0.2075 | 0.2394 | 0.1468 | — |
 | Content-based (TF-IDF metadata) | 0.2054 | 0.2171 | 0.1392 | — |
-| **Hybrid (final)** | **0.4493** | **0.4646** | 0.2612 | **0.42177 / 0.41517 (s03)** |
+| **Hybrid (final)** | **0.4490** | **0.4646** | 0.2612 | **0.42152 / 0.41453 (s04)** |
 
 \* from `outputs/11_gt_sensitivity.csv` / `outputs/14_count_hypothesis.csv` (same protocol, seconds-based ranking).
 Paired bootstrap over users (2,000 resamples): hybrid − personal history = +0.062 [0.055, 0.070];
@@ -40,8 +42,8 @@ hybrid − popularity = +0.159 [0.148, 0.170] (`outputs/52_bootstrap.csv`).
   which show that 53% of viewing seconds land on labelled airtime although only 10.8% of schedule rows are labelled.
 - **Candidate pool:** labelled programmes that air in the target window (test: weeks 31-42 schedule, used only
   for what airs where and when, plus programme metadata). Repeats are allowed, identically for every method.
-- **Cold start:** every test user is in the log; any list shorter than 5 is padded with popularity (0 users needed it
-  in the final submission).
+- **Cold start:** every test user is in the log, but 14 have no labelled airing in weeks 21-30 (the window the final
+  model reads; 2 have none in 11-30). Every method, the hybrid included, returns the popularity top-5 for such users.
 - **Top-5:** each method ranks the pool by its own score (count, cosine, MF dot product, re-ranker probability),
   takes the best 5 finite positive scores and pads with popularity; scores are never mixed across methods
   except as features of the re-ranker.
@@ -59,8 +61,8 @@ unzip data/sweettv-tv-program-recommender.zip -d data
 sh run_all.sh          # every stage in order, logs in outputs/logs/, ~5 min
 ```
 
-`run_all.sh` regenerates every table in `outputs/` and the three submission files byte-for-byte
-(SHA-256 of `s03_hybrid.csv`: `1cb1da466c7c21bc…`). Note: `src/04_threshold_eda.py` also writes
+`run_all.sh` regenerates every table in `outputs/` and the four submission files byte-for-byte
+(SHA-256 of `s04_hybrid.csv`: `bbd04b14…`; `s03_hybrid.csv` is rebuilt with `60_final_submission.py s03_hybrid --s03`). Note: `src/04_threshold_eda.py` also writes
 `data/parquet/airings.parquet`, which all later stages read.
 
 | Stage | Scripts |
@@ -78,7 +80,7 @@ PureSVD, content-based), `hybrid.py` (candidates, features, re-ranker), `submiss
 
 Apple M3 Pro (12 cores, 36 GB), macOS 15.6.1, Python 3.12.14; library versions in `requirements.txt`.
 Seeds: `SEED = 42` for SVD, ALS, the re-ranker and the bootstrap; the join check samples views with seed 7.
-Full pipeline runtime: 4 min 34 s.
+Full pipeline runtime: 4 min 57 s (last full run).
 
 ## AI assistance
 

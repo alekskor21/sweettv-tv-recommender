@@ -1,4 +1,5 @@
 submission,LB public,LB private,val A5_half,public / val,private / val
 s01 popularity,0.28234,0.27809,0.2922,0.966,0.952
 s02 personal history (seconds),0.27882,0.2485,0.2953,0.944,0.842
-s03 hybrid,0.42177,0.41517,0.4493,0.939,0.924
+s03 hybrid (no cold rule),0.42177,0.41517,0.4493,0.939,0.924
+s04 hybrid (final),0.42152,0.41453,0.449,0.939,0.923

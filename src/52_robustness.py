@@ -32,7 +32,7 @@ def per_user_ap(recs):
 
 # (1) seed variance of the re-ranker (early-stopping split is random)
 ap = {}
-for name, feats in [("hybrid base (s03)", FEATURES), ("hybrid + regularity", FEATURES_EXT)]:
+for name, feats in [("hybrid (final)", FEATURES), ("hybrid + regularity", FEATURES_EXT)]:
     scores = []
     for seed in range(5):
         m = ranker(feats)
@@ -62,9 +62,9 @@ rng = np.random.default_rng(SEED)
 B = 2000
 idx = rng.integers(0, len(users), size=(B, len(users)))
 print("\npaired bootstrap (2,000 resamples of the 1,246 users), difference in MAP@5 with 95% CI:")
-pairs = [("hybrid base (s03)", "personal history"), ("hybrid base (s03)", "popularity"),
+pairs = [("hybrid (final)", "personal history"), ("hybrid (final)", "popularity"),
          ("personal history", "popularity"), ("PureSVD", "popularity"), ("PureSVD", "personal history"),
-         ("content-based", "popularity"), ("hybrid + regularity", "hybrid base (s03)")]
+         ("content-based", "popularity"), ("hybrid + regularity", "hybrid (final)")]
 rows = []
 for a_name, b_name in pairs:
     d = ap[a_name] - ap[b_name]

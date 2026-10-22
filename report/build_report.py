@@ -38,7 +38,7 @@ def methods_table():
         ("MF: ALS [1]", best.loc["ALS", "params"], best.loc["ALS"], "—"),
         ("MF: PureSVD [2]", best.loc["PureSVD", "params"], best.loc["PureSVD"], "—"),
         ("Content-based [3]", "min_airings=10, all fields + channel", best.loc["content-based"], "—"),
-        ("<b>Hybrid (final)</b>", "candidates + re-ranker", {"A5_half": float(hyb[3]), "A5_any": float(hyb[4]), "T5sec": float(hyb[5])}, "<b>" + lbs("s03 hybrid") + "</b>"),
+        ("<b>Hybrid (final)</b>", "candidates + re-ranker", {"A5_half": float(hyb[3]), "A5_any": float(hyb[4]), "T5sec": float(hyb[5])}, "<b>" + lbs("s04 hybrid (final)") + "</b>"),
     ]
     body = "".join(f"<tr><td>{n}</td><td>{html.escape(str(p))}</td><td class=n>{f4(r['A5_half'])}</td><td class=n>{f4(r['A5_any'])}</td>"
                    f"<td class=n>{f4(r['T5sec'])}</td><td class=n>{l}</td></tr>" for n, p, r, l in rows)

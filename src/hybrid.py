@@ -138,7 +138,11 @@ def ranker(features=FEATURES, max_leaf_nodes=31, learning_rate=0.05):
                                           validation_fraction=0.1, random_state=SEED)
 
 
-def recs_from_scores(c, score_col, users, fallback, k=5):
+def recs_from_scores(c, score_col, users, fallback, k=5, cold_fallback=True):
+    """Top-k by score. Cold users (no labelled airing in the history window, u_cnt == 0) get the
+    popularity fallback, the same rule as every single method; cold_fallback=False reproduces s03,
+    where the re-ranker also ordered candidates for cold users from item features alone."""
     from common import fill_to_k
-    top = c.sort_values(["uid", score_col], ascending=[True, False]).groupby("uid")["tv_show_id"].apply(list).to_dict()
+    warm = c[c["u_cnt"] > 0] if cold_fallback else c
+    top = warm.sort_values(["uid", score_col], ascending=[True, False]).groupby("uid")["tv_show_id"].apply(list).to_dict()
     return {u: fill_to_k(top.get(u, []), fallback, k) for u in users}

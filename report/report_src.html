@@ -44,14 +44,14 @@
 <h1 class="title">Habit Beats Similarity: A Leaderboard-Calibrated Two-Stage Recommender for sweet.tv TV Programmes</h1>
 <div class="meta">
 Student: Aleksandr Korostelev · Team: Individual<br>
-Email: aleks.korstl@gmail.com · Date: 2026-10-25<br>
+Email: aleks.korstl@gmail.com · Date: 2026-10-22<br>
 Assignment: Midterm Exam — TV Program Recommendation (sweet.tv, Kaggle) · Code: <a href="https://github.com/alekskor21/sweettv-tv-recommender">github.com/alekskor21/sweettv-tv-recommender</a>
 </div>
 
 <div class="cols">
 
 <div class="abstract">
-<p><i>Abstract</i>—We predict, for each of 1,260 sweet.tv users, the five TV programmes they will prefer in weeks 31–42, from a channel-level view log and a broadcast schedule in which only 10.8% of rows carry a programme id. We join views to airings by channel and time overlap, infer the hidden target from two leaderboard probes, compare popularity, personal history, ALS, PureSVD and content-based filtering on one temporal hold-out, and combine them by candidate generation with a gradient-boosting re-ranker. The hybrid reaches MAP@5 0.449 on validation against 0.292 for popularity, and 0.42177 public / 0.41517 private on Kaggle. On linear TV, how often a user returned to a programme and whether it airs again carry most of the signal; similarity-based methods add little on their own.</p>
+<p><i>Abstract</i>—We predict, for each of 1,260 sweet.tv users, the five TV programmes they will prefer in weeks 31–42, from a channel-level view log and a broadcast schedule in which only 10.8% of rows carry a programme id. We join views to airings by channel and time overlap, infer the hidden target from two leaderboard probes, compare popularity, personal history, ALS, PureSVD and content-based filtering on one temporal hold-out, and combine them by candidate generation with a gradient-boosting re-ranker. The hybrid reaches MAP@5 0.449 on validation against 0.292 for popularity, and 0.42152 public / 0.41453 private on Kaggle. On linear TV, how often a user returned to a programme and whether it airs again carry most of the signal; similarity-based methods add little on their own.</p>
 <p><i>Index Terms</i>—implicit feedback, TV recommendation, matrix factorization, learning to rank, temporal validation.</p>
 </div>
 
@@ -61,7 +61,7 @@ Assignment: Midterm Exam — TV Program Recommendation (sweet.tv, Kaggle) · Cod
 <p><span class="lead">Concrete example.</span> A heavy test viewer (933 labelled airings in weeks 11–20) watched the news programme ТСН 60 times. From that history the final hybrid returns ТСН, Факты, Завтрак с 1+1, Вещдок and Утро с Интером; three of them are in the user’s actual top-5 of weeks 21–30, AP@5 = 0.55 (Table IV).</p>
 <p class="noindent"><span class="lead">Contributions.</span></p>
 <ul>
-<li>A reproducible pipeline (raw CSV → submission in 4 min 34 s, byte-identical on re-run) with a verified join and a validation protocol that tracks the leaderboard: Kaggle public ≈ 0.94–0.97 × validation for all three submissions.</li>
+<li>A reproducible pipeline (raw CSV → submission in 4 min 57 s, byte-identical on re-run) with a verified join and a validation protocol that tracks the leaderboard: Kaggle public ≈ 0.94–0.97 × validation for all four submissions.</li>
 <li>A comparison of five methods on one hold-out and a hybrid that adds +0.062 MAP@5 (95% CI [0.055, 0.070]) over the strongest single method.</li>
 </ul>
 
@@ -83,7 +83,7 @@ Assignment: Midterm Exam — TV Program Recommendation (sweet.tv, Kaggle) · Cod
 <li><i>Parse.</i> <code>user_id</code> is kept as a string: values reach 1.8·10<sup>19</sup> and overflow int64.</li>
 <li><i>Join.</i> A view matches a schedule row when <code>vsetv_id = channel_id</code> and the intervals overlap by more than 0 s: 7,752,424 view–programme rows in 3.1 s. Rows with <code>tv_show_id = 0</code> are dropped as items (the organisers call them irrelevant); they are used only to measure coverage.</li>
 <li><i>Signal.</i> For each (user, airing) we sum the overlap; <code>n_airings(u, s)</code> = number of airings of programme <i>s</i> the user overlapped in the history window.</li>
-<li><i>Pool and output.</i> Candidates = labelled programmes that air in the target window; already-watched programmes are allowed for every method. Each method ranks the pool by its own score (count, cosine, dot product or probability), keeps the top five, and pads with the popularity list if fewer than five candidates have a positive score.</li>
+<li><i>Pool and output.</i> Candidates = labelled programmes that air in the target window; already-watched programmes are allowed for every method. Each method ranks the pool by its own score (count, cosine, dot product or probability), keeps the top five, and pads with the popularity list if fewer than five candidates have a positive score. A user with no labelled airing in the history window is cold: every method, the hybrid included, returns the popularity top-5 for that user.</li>
 <li><i>Methods.</i> Popularity: distinct viewers in the history window. Personal history: <code>n_airings</code>. ALS [1]: confidence 1 + α·log(1 + n). PureSVD [2]: rank-k SVD of log(1 + n). Content-based [3]: TF-IDF over category, genres, directors, first five actors, decade and channel; profile = Σ log(1 + n)·item vector; cosine score.</li>
 <li><i>Hybrid.</i> Candidates = own history ∪ PureSVD top-50 ∪ content top-20 ∪ popularity top-30; 20 features (own counts, recency, share, viewing rate × future airings, popularity, airings per week in history and target windows, category, SVD and content scores, channel affinity); a gradient-boosting classifier predicts “in the user’s target top-5”, and the five highest probabilities are returned.</li>
 </ol>
@@ -98,24 +98,24 @@ Assignment: Midterm Exam — TV Program Recommendation (sweet.tv, Kaggle) · Cod
 
 <h2>4. Experiments</h2>
 <p><span class="lead">Setup.</span> History = weeks 11–20, target = weeks 21–30, evaluated users = the 1,246 test users active in 21–30, pool = 6,376 programmes airing in 21–30. MAP@5 divides each user’s sum of precisions by min(5, |R<sub>u</sub>|); a unit test reproduces the course example (0.917 and 0.533). Hardware: Apple M3 Pro, 12 cores, 36 GB, macOS 15.6.1.</p>
-<p><span class="lead">Data facts that shaped the design.</span> Views shorter than 61 s are absent from the log. Both files are in local wall-clock time: each shows the +3,600 s daylight-saving gap of 29 March 2020 (117 views, 394 schedule boundaries), so no clock shift was applied. 94.1% of viewing seconds fall on scheduled airtime and 53.1% on labelled programmes — far more than the 10.8% of labelled rows, because labelled programmes are long. Per (user, airing), the covered fraction is bimodal: 38% of pairs cover < 10% of the programme, 17.5% cover > 90%. All 1,260 test users are in the log, so no test user is cold; 1,437 of the 6,636 programmes airing in weeks 31–42 never aired in weeks 11–30.</p>
+<p><span class="lead">Data facts that shaped the design.</span> Views shorter than 61 s are absent from the log. Both files are in local wall-clock time: each shows the +3,600 s daylight-saving gap of 29 March 2020 (117 views, 394 schedule boundaries), so no clock shift was applied. 94.1% of viewing seconds fall on scheduled airtime and 53.1% on labelled programmes — far more than the 10.8% of labelled rows, because labelled programmes are long. Per (user, airing), the covered fraction is bimodal: 38% of pairs cover < 10% of the programme, 17.5% cover > 90%. All 1,260 test users are in the log, but 2 have no labelled airing in weeks 11–30 and 14 none in weeks 21–30, the window the final model reads; these 14 get the popularity top-5; 1,437 of the 6,636 programmes airing in weeks 31–42 never aired in weeks 11–30.</p>
 <!--TABLE:calibration-->
-<p><span class="lead">Calibration.</span> Two cheap submissions (popularity, personal history ranked by seconds) were used as probes. Their Kaggle ratio is 0.99 public / 0.89 private, while seconds-based top-5 to top-20 targets predict 1.2–1.7; “all programmes watched” matches the ratio but puts popularity at 0.81, three times its Kaggle score (Table I). The chosen A5_half target then predicted the leaderboard of all three submissions within a nearly constant factor: public / validation = 0.966, 0.944 and 0.939.</p>
+<p><span class="lead">Calibration.</span> Two cheap submissions (popularity, personal history ranked by seconds) were used as probes. Their Kaggle ratio is 0.99 public / 0.89 private, while seconds-based top-5 to top-20 targets predict 1.2–1.7; “all programmes watched” matches the ratio but puts popularity at 0.81, three times its Kaggle score (Table I). The chosen A5_half target then predicted the leaderboard of all four submissions within a nearly constant factor: public / validation = 0.966, 0.944, 0.939 and 0.939.</p>
 <div class="wide">
 <!--TABLE:methods-->
 </div>
 <p><span class="lead">Comparison vs baseline.</span> Personal history and PureSVD beat popularity by about +0.09 to +0.10; ALS and content-based filtering stay below it. The hybrid beats popularity by +0.159 and personal history by +0.062, both with confidence intervals far from zero (Table III); on the leaderboard it moves from 0.282 to 0.422 (Fig. 1). Under the seconds-based T5sec target the hybrid ranks below personal history, which shows that it was optimised for the count target.</p>
 <figure style="margin: 2pt 0 6pt; break-inside: avoid;">
 <img src="kaggle_submissions.png" style="width: 100%; border: 0.5pt solid #000;" alt="Kaggle Submissions page">
-<figcaption style="font-size: 7.6pt; text-align: center; margin-top: 2pt;">Fig. 1. Kaggle Submissions page (late submissions, 22 Oct 2026). Designated final submission: <code>s03_hybrid.csv</code>, ref 57531540 — private 0.41517, public 0.42177. The page shows 0 of 2 selected and offers no selection for these late submissions.</figcaption>
+<figcaption style="font-size: 7.6pt; text-align: center; margin-top: 2pt;">Fig. 1. Kaggle Submissions page (late submissions, 22 Oct 2026). Designated final submission: <code>s04_hybrid.csv</code>, ref 57533595 — private 0.41453, public 0.42152; <code>s03_hybrid.csv</code> (0.41517 / 0.42177) differs only in the lists of the 14 cold users. The page shows 0 of 2 selected and offers no selection for these late submissions.</figcaption>
 </figure>
 <!--TABLE:bootstrap-->
-<p><span class="lead">Ablation and candidates.</span> Re-fitting the extended re-ranker without its own-history features costs 0.015 (0.4527 → 0.4375); without SVD and content scores, only 0.003 (seed standard deviation 0.0013 over five seeds). Candidate recall of target items is 0.841; own history alone covers 0.802 (items found by one source only: history 0.024, popularity 0.022, PureSVD 0.010, content 0.002). Five regularity features (+0.001, CI [−0.003, 0.005]) were not adopted.</p>
+<p><span class="lead">Ablation and candidates.</span> Re-fitting the extended re-ranker without its own-history features costs 0.015 (0.4524 → 0.4375); without SVD and content scores, only 0.003 (seed standard deviation 0.0013 over five seeds). Candidate recall of target items is 0.841; own history alone covers 0.802 (items found by one source only: history 0.024, popularity 0.022, PureSVD 0.010, content 0.002). Five regularity features (+0.001, CI [−0.003, 0.004]) were not adopted.</p>
 <p class="noindent"><span class="lead">Verification.</span></p>
 <ul>
 <li>Join re-computed by brute force on 320 views (20 longer than 20,000 s): 0 mismatches.</li>
 <li>MAP@5 unit-tested on the course example and edge cases (more than five relevant items, duplicates).</li>
-<li>Full pipeline re-run from the raw CSVs: every metric identical and the three submission files byte-identical (SHA-256 of <code>s03_hybrid.csv</code> = <code>1cb1da46…</code>).</li>
+<li>Full pipeline re-run from the raw CSVs: every metric identical and the four submission files byte-identical (SHA-256 of the final <code>s04_hybrid.csv</code> = <code>bbd04b14…</code>).</li>
 <li>Every submission file checked before upload: 1,260 users in template order, five distinct ids, all in the weeks 31–42 pool.</li>
 </ul>
 <p><span class="lead">Recommendation examples.</span> The two users were picked by rule, not by hand: the test users closest to the 90th and 10th percentile of watched airings in weeks 11–20. Lists come from the validation split, so they can be compared with what the users actually watched in weeks 21–30. Shaded cells are hits; “(new)” marks programmes the user never overlapped in weeks 11–20; titles and categories are looked up from the schedule.</p>

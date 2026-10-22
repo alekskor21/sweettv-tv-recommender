@@ -1,4 +1,4 @@
 ranker fitted on 838,016 rows, 314 iterations
-test candidates: 237,674; users with < 5 candidates (padded by popularity): 0
-OK s03_hybrid.csv: 1260 rows x 5 ids, 133 distinct ids, all in pool
-runtime 12.4s
+test candidates: 237,674; cold test users (no labelled airing in 21-30): 14 -> popularity top-5
+OK s04_hybrid.csv: 1260 rows x 5 ids, 133 distinct ids, all in pool
+runtime 12.8s

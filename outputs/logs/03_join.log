@@ -2,4 +2,4 @@ joined rows: 7,752,424 | programmes per view (median): 1
 view seconds matched to any schedule row: 0.941
   ...to labelled programmes (tv_show_id != 0): 0.531
 views touching at least one labelled programme: 0.509
-done in 3.1s
+done in 3.3s

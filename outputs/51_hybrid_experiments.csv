@@ -1,12 +1,12 @@
 variant,A5_half,A5_any,T5sec,iters,sec
-s03 configuration (base features),0.4493,0.4646,0.2612,208,4.0
-+ regularity/recency features,0.4527,0.4688,0.2621,187,4.0
-"+ regularity, 63 leaves",0.4532,0.4671,0.2639,163,4.5
-"+ regularity, lr 0.1",0.4494,0.4643,0.2603,93,2.2
-ablation: without MF score (svd),0.4527,0.4667,0.2625,216,4.2
-ablation: without content score (cb),0.4505,0.4665,0.2611,178,3.7
-ablation: without svd + cb,0.4495,0.4659,0.261,202,3.9
-ablation: without channel affinity,0.451,0.4679,0.2634,222,4.3
-ablation: without own history counts,0.4375,0.4557,0.2461,212,3.5
-ablation: without target-window airing counts,0.4534,0.4654,0.2611,217,4.2
-"+ regularity, wider candidates (svd100/cb50/pop50)",0.4517,0.4673,0.2628,327,8.3
+final configuration (base features),0.449,0.4646,0.2612,208,4.9
++ regularity/recency features,0.4524,0.4687,0.2621,187,4.5
+"+ regularity, 63 leaves",0.4532,0.4673,0.2639,163,5.0
+"+ regularity, lr 0.1",0.4494,0.4644,0.2603,93,2.4
+ablation: without MF score (svd),0.4523,0.4667,0.2625,216,4.4
+ablation: without content score (cb),0.4501,0.4666,0.2611,178,3.8
+ablation: without svd + cb,0.4492,0.4659,0.261,202,4.4
+ablation: without channel affinity,0.451,0.4681,0.2634,222,4.8
+ablation: without own history counts,0.4375,0.4558,0.2461,212,3.8
+ablation: without target-window airing counts,0.4534,0.4656,0.2611,217,4.7
+"+ regularity, wider candidates (svd100/cb50/pop50)",0.4516,0.4673,0.2628,327,8.5

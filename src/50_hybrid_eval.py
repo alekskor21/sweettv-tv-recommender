@@ -35,7 +35,8 @@ print(f"ranker fitted on {len(tr):,} rows ({tr['uid'].nunique()} non-test users)
       f"iterations used: {model.n_iter_}")
 te["p"] = model.predict_proba(te[FEATURES])[:, 1]
 fallback = list(i_pop.reindex(pool.index).fillna(0).sort_values(ascending=False).index)
-res = {"hybrid (GBM re-ranker)": evaluate(recs_from_scores(te, "p", test, fallback), gts)}
+res = {"hybrid (GBM re-ranker)": evaluate(recs_from_scores(te, "p", test, fallback), gts),
+       "hybrid, s03 legacy (no cold rule)": evaluate(recs_from_scores(te, "p", test, fallback, cold_fallback=False), gts)}
 for col in ["h_cnt", "h_expected", "svd"]:
     res[f"single feature: {col}"] = evaluate(recs_from_scores(te, col, test, fallback), gts)
 print(pd.DataFrame(res).T.to_string())

@@ -1,14 +1,14 @@
-hybrid base (s03): MAP@5 over 5 seeds = 0.4497 +- 0.0013 (min 0.4482, max 0.4512)
-hybrid + regularity: MAP@5 over 5 seeds = 0.4523 +- 0.0009 (min 0.4511, max 0.4539)
+hybrid (final): MAP@5 over 5 seeds = 0.4497 +- 0.0013 (min 0.4482, max 0.4512)
+hybrid + regularity: MAP@5 over 5 seeds = 0.4522 +- 0.0009 (min 0.4511, max 0.4539)
 
 paired bootstrap (2,000 resamples of the 1,246 users), difference in MAP@5 with 95% CI:
-  hybrid base (s03) - personal history: +0.0621 [+0.0546, +0.0696]
-  hybrid base (s03) - popularity: +0.1590 [+0.1480, +0.1704]
+  hybrid (final) - personal history: +0.0621 [+0.0545, +0.0696]
+  hybrid (final) - popularity: +0.1590 [+0.1480, +0.1703]
   personal history - popularity: +0.0969 [+0.0844, +0.1097]
   PureSVD - popularity: +0.0925 [+0.0803, +0.1044]
   PureSVD - personal history: -0.0044 [-0.0082, -0.0007]
   content-based - popularity: -0.0868 [-0.1006, -0.0727]
-  hybrid + regularity - hybrid base (s03): +0.0010 [-0.0026, +0.0046]
+  hybrid + regularity - hybrid (final): +0.0006 [-0.0029, +0.0043]
 
 candidate recall of GT items:
   own history: 0.802 (unique to this source: 0.024)
